@@ -1,0 +1,15 @@
+source:
+  group: apps
+  kind: Deployment
+  version: v1
+  fieldPath: metadata.labels.[app.acampos.local/version]
+targets:
+  - select:
+      group: apps
+      kind: Deployment
+      version: v1
+    fieldPaths:
+      - metadata.labels.[tags.datadoghq.com/version]
+      - spec.template.metadata.labels.[tags.datadoghq.com/version]
+    options:
+      create: true

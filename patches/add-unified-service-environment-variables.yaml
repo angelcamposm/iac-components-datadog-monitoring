@@ -1,0 +1,21 @@
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: DD_ENV
+    valueFrom:
+      fieldRef:
+        fieldPath: metadata.labels['tags.datadoghq.com/env']
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: DD_SERVICE
+    valueFrom:
+      fieldRef:
+        fieldPath: metadata.labels['tags.datadoghq.com/service']
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: DD_VERSION
+    valueFrom:
+      fieldRef:
+        fieldPath: metadata.labels['tags.datadoghq.com/version']

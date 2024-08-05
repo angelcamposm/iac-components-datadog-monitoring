@@ -1,0 +1,24 @@
+# Environment labels
+#
+- op: add
+  path: /metadata/labels/tags.datadoghq.com~1env
+  value: DEV
+- op: add
+  path: /spec/template/metadata/labels/tags.datadoghq.com~1env
+  value: DEV
+# Service name labels
+#
+- op: add
+  path: /metadata/labels/tags.datadoghq.com~1service
+  value: my-awesome-service-name
+- op: add
+  path: /spec/template/metadata/labels/tags.datadoghq.com~1service
+  value: my-awesome-service-name
+# Service version labels
+#
+- op: add
+  path: /metadata/labels/tags.datadoghq.com~1version
+  value: '0.0.0'
+- op: add
+  path: /spec/template/metadata/labels/tags.datadoghq.com~1version
+  value: '0.0.0'

@@ -1,0 +1,15 @@
+source:
+  group: apps
+  kind: Deployment
+  version: v1
+  fieldPath: metadata.labels.[app.acampos.local/env]
+targets:
+  - select:
+      group: apps
+      kind: Deployment
+      version: v1
+    fieldPaths:
+      - metadata.labels.[tags.datadoghq.com/env]
+      - spec.template.metadata.labels.[tags.datadoghq.com/env]
+    options:
+      create: true
