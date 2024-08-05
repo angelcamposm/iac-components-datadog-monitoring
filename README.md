@@ -1,10 +1,11 @@
-# Kustomize IaC Components | Datadog Unified Service Tagging
+# Kustomize Component | Datadog Unified Service Tagging
 
-Este componente de [Kustomize](https://kustomize.io) de ejemplo es responsable de añadir las etiquetas requeridas por [Unified Service Tagging](https://docs.datadoghq.com/getting_started/tagging/unified_service_tagging?tab=kubernetes) de [Datadog](https://www.datadoghq.com/).
+Este ejemplo de componente de [Kustomize](https://kustomize.io) muestra como añadir las etiquetas requeridas por [Unified Service Tagging](https://docs.datadoghq.com/getting_started/tagging/unified_service_tagging?tab=kubernetes) de [Datadog](https://www.datadoghq.com/).
 
 ## Requirements
 
-Requiere Kustomize v3.7.0 o superior
+- Requiere una versión de Kustomize v3.7.0 o superior.
+- Se asume que el clúster objetivo, tiene desplegado el agente de Datadog.
 
 Adicionalmente, para que el ejemplo funcione completamente, es necesario que en el `Deployment` objetivo en el primer contenedor (se da por supuesto que es la aplicación) exista el nodo `env` vacío o no:
 
@@ -39,3 +40,7 @@ spec:
             - name: APP
               value: my-awesome-app
 ```
+
+## Maintainers
+
+- 🧑‍💻 Angel Campos
